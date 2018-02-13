@@ -11,7 +11,7 @@ class CategoryForm(forms.ModelForm):
 
     class Meta:
         model = Category
-        fields = ('name',)
+        fields = ('name', )
 
 class PageForm(forms.ModelForm):
     title = forms.CharField(max_length=128,
@@ -35,10 +35,10 @@ class UserForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput())
 
     class Meta:
-        model = UserFormfields = ('username', 'email', 'password')
+        model = User
+        fields = ('username', 'email', 'password')
 
-    class UserProfileForm(forms.ModelForm):
-        class Meta:
-            model = UserProfileForm
-            fields = ('website', 'picture')
-
+class UserProfileForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ('website', 'picture')
